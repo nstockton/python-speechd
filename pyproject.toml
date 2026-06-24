@@ -1,0 +1,61 @@
+[build-system]
+	requires = ["pdm-backend"]
+	build-backend = "pdm.backend"
+
+[project]
+	name = "python-speechd"
+	description = "My personal fork of the Speech Dispatcher bindings for Python"
+	license = "LGPL-2.1-or-later"
+	license-files = [
+		"LICENSE",
+	]
+	readme = "README.md"
+	requires-python = ">=3.10,<4.0"
+	dependencies = []
+	dynamic = ["version"]
+	keywords = [
+		"speech",
+		"tts",
+	]
+	classifiers = [
+		"Development Status :: 5 - Production/Stable",
+		"Programming Language :: Python",
+		"Programming Language :: Python :: 3",
+		"Programming Language :: Python :: 3 :: Only",
+		"Programming Language :: Python :: 3.10",
+		"Programming Language :: Python :: 3.11",
+		"Programming Language :: Python :: 3.12",
+		"Programming Language :: Python :: 3.13",
+		"Programming Language :: Python :: 3.14",
+		"Programming Language :: Python :: Implementation",
+		"Programming Language :: Python :: Implementation :: CPython",
+		"Operating System :: POSIX",
+		"Operating System :: POSIX :: Linux",
+		"Topic :: Utilities",
+	]
+
+[project.urls]
+	homepage = "https://github.com/nstockton/python-speechd"
+	repository = "https://github.com/nstockton/python-speechd"
+
+[tool.pdm.build]
+	package-dir = "src"
+	includes = [
+		"src/speechd",
+	]
+	excludes = []
+	source-includes = [
+		"tests",
+		"uv.lock",
+	]
+
+[tool.pdm.version]
+	fallback_version = "0.0.0"
+	source = "scm"
+	tag_filter = "[vV][0-9]*"
+	tag_regex = '^(?:[vV])(?P<version>\d+\.\d+\.\d+)(?:.*)$'
+	write_to = "speechd/_version.py"
+	write_template = "__version__: str = \"{}\"\n"
+
+[tool.uv]
+	upgrade-package = ["python-speechd"]
