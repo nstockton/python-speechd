@@ -1,0 +1,7 @@
+version = 1
+revision = 3
+requires-python = ">=3.10, <4.0"
+
+[[package]]
+name = "speechd-unofficial"
+source = { editable = "." }
