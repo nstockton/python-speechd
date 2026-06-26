@@ -3,7 +3,7 @@
 	build-backend = "pdm.backend"
 
 [project]
-	name = "python-speechd"
+	name = "speechd-unofficial"
 	description = "My personal fork of the Speech Dispatcher bindings for Python"
 	license = "LGPL-2.1-or-later"
 	license-files = [
@@ -34,10 +34,6 @@
 		"Topic :: Utilities",
 	]
 
-[project.urls]
-	homepage = "https://github.com/nstockton/python-speechd"
-	repository = "https://github.com/nstockton/python-speechd"
-
 [tool.pdm.build]
 	package-dir = "src"
 	includes = [
@@ -58,4 +54,4 @@
 	write_template = "__version__: str = \"{}\"\n"
 
 [tool.uv]
-	upgrade-package = ["python-speechd"]
+	upgrade-package = ["speechd-unofficial"]
